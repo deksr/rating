@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
-// import items from './items.json';
-import NameTitle from './Components/NameTitle/NameTitle'
-import './App.css';
+// import React, { Component } from 'react';
+// import ItemLists from './itemlists'
+// import './App.css';
 
 
 class App extends Component {
@@ -29,15 +28,18 @@ class App extends Component {
 
 
   render() {  
-    // console.log(this.state.data)
     return (
       <div className="App">
-      <NameTitle 
-        songinfo={this.state.data}/> 
+        // <ItemList songInfo = {this.state.data} />
+
+        {this.state.data.map(function(object){
+          return (
+            <ItemLists key={object.id} data={object}/>
+          )
+        })}
       </div>
     );
   }
 }
 
-export default App;
-
+// export default App;
